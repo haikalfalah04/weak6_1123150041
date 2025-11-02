@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:latihan_spash_uts/screen/splash_screen_2.dart';
 
-class MySplashScreen extends StatelessWidget {
-  const MySplashScreen({super.key});
+class MySplashScreen2 extends StatelessWidget {
+  const MySplashScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class MySplashScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Colors.amber,
                   image: DecorationImage(
-                    image: AssetImage("assets/images/image1.png"),
+                    image: AssetImage("assets/images/image2.jpeg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -27,7 +28,7 @@ class MySplashScreen extends StatelessWidget {
 
               // 🔹 Judul
               const Text(
-                "Welcome",
+                "Welcome2",
                 style: TextStyle(
                   fontSize: 32.0,
                   color: Colors.black,
@@ -63,7 +64,7 @@ class MySplashScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 4),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xFF84a98c), // aktif
+                      color: Color(0xFFedede9), // non-aktif
                     ),
                   ),
                   Container(
@@ -72,7 +73,7 @@ class MySplashScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 4),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xFFedede9), // non-aktif
+                      color: Color(0xFF84a98c), // aktif
                     ),
                   ),
                   Container(
@@ -86,6 +87,40 @@ class MySplashScreen extends StatelessWidget {
                   ),
                 ],
               ),
+
+              const Spacer(),
+
+              // 🔹 Tombol Continue
+              SizedBox(height: 20),
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 11, 231, 59),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (contex) => MySplashScreen2(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Continue",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 70),
             ],
           ),
         ),
