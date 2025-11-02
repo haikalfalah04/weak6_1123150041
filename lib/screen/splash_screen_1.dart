@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihan6/screen/splash_screen_2.dart';
 
 class MySplashScreen extends StatelessWidget {
   const MySplashScreen({super.key});
@@ -18,7 +19,7 @@ class MySplashScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Colors.amber,
                   image: DecorationImage(
-                    image: AssetImage("assets/images/image1.png"),
+                    image: AssetImage("assets/images/bonaparte.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -86,6 +87,40 @@ class MySplashScreen extends StatelessWidget {
                   ),
                 ],
               ),
+
+              const Spacer(),
+
+              // 🔹 Tombol Continue
+              SizedBox(height: 20),
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 11, 231, 59),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (contex) => MySplashScreen2(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Continue",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 70),
             ],
           ),
         ),
